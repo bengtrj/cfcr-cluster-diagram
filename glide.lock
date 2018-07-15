@@ -1,0 +1,8 @@
+hash: 7e20d061dc89b45d9909d85fb5856fd1413acf115f17ec509fc789f0604d630c
+updated: 2018-07-15T21:18:56.959841+01:00
+imports:
+- name: gopkg.in/yaml.v2
+  version: 5420a8b6744d3b0345ab293f6fcba19c978f1183
+- name: k8s.io/client-go
+  version: 7d04d0e2a0a1a4d4a1cd6baa432a2301492e4e65
+testImports: []

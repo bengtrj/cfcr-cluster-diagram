@@ -1,0 +1,46 @@
+[
+        { data: { id: 'cy',      name: 'Clusters'                  } },
+        { data: { id: 'cluster-1', name: '{{ .Name }}', parent: 'cy' } },
+        {{range .Masters}}
+        {
+            data: {
+                id: '{{.Id}}', name: '{{.Name}}', parent: 'cluster-1',
+            },
+            classes: 'master'
+        },
+        {{ range .Jobs }}
+            {
+                data: {
+                   id: '{{.Id}}', name: '{{.Name}}', parent: '{{.ParentId}}'
+                },
+                classes: '{{range .CssClasses}}{{.}} {{end}}',
+                position: { x: {{.Position.X}}, y: {{.Position.Y}} }
+            },
+        {{ end }}
+        {{ end }}
+            {
+                data: {
+                   id: 'cluster-1-worker-network', name: 'container network', parent: 'cluster-1'
+                },
+                classes: 'network'
+            },
+        {{range .Workers}}
+        {
+            data: {
+                id: '{{.Id}}', name: '{{.Name}}', parent: 'cluster-1-worker-network',
+            },
+            classes: 'worker'
+        },
+        {{ range .Jobs }}
+            {
+                data: {
+                   id: '{{.Id}}', name: '{{.Name}}', parent: '{{.ParentId}}'
+                },
+                classes: '{{range .CssClasses}}{{.}} {{end}}',
+                position: { x: {{.Position.X}}, y: {{.Position.Y}} }
+            },
+        {{ end }}
+        {{ end }}
+
+
+]

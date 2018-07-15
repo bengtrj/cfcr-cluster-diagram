@@ -1,0 +1,139 @@
+var cy = cytoscape({
+    container: document.getElementById('cy'),
+    style: cytoscape.stylesheet()
+        .selector('node')
+        .css({
+            'content': 'data(name)',
+            'text-valign': 'center',
+            'color': 'white',
+            'text-outline-width': 2,
+            'text-outline-color': '#888',
+            'width': 80,
+            'height': 80,
+            'font-size': 17
+        })
+        .selector('edge')
+        .css({
+            'content': 'data(name)',
+            'width': 8,
+            'line-color': '#888',
+            'target-arrow-color': '#888',
+            'source-arrow-color': '#888',
+            'target-arrow-shape': 'triangle'
+        })
+        .selector(':selected')
+        .css({
+            'background-color': 'black',
+            'line-color': 'black',
+            'target-arrow-color': 'black',
+            'source-arrow-color': 'black',
+            'text-outline-color': 'black'
+        })
+        .selector('$node > node')
+        .css({
+            'shape': 'roundrectangle',
+            'text-valign': 'top',
+            'height': 'auto',
+            'width': 'auto',
+            'background-color': '#ccc',
+            'background-opacity': 0.333,
+            'color': '#888',
+            'text-outline-width': 0,
+            'font-size': 25
+        })
+        .selector('.master, #app')
+        .css({
+            'width': 120,
+            'height': 120,
+            'font-size': 25,
+            'background-color': '#ccc',
+            'background-opacity': 0.666,
+        }).selector('.master-process')
+        .css({
+            'width': 80,
+            'height': 80,
+            'font-size': 15,
+            'text-outline-width': 3,
+            'background-color': '#ca4',
+            'background-opacity': 0.666,
+        }).selector('.k8s-process')
+        .css({
+            'background-color': '#D34',
+            'background-opacity': 0.666,
+        }).selector('.flanneld')
+        .css({
+            'background-color': '#C94',
+            'background-opacity': 0.666,
+        }).selector('.etcd')
+        .css({
+            'background-color': '#134',
+            'background-opacity': 0.666,
+        }).selector('.network')
+        .css({
+            'text-margin-x': -85,
+            'text-margin-y': -2,
+            'font-size': 5,
+            'text-align': 'left',
+            'color': '#40818D',
+            'background-color': '#134',
+            'background-opacity': 0,
+            'border-style': 'dotted',
+            'border-width': 1,
+            'border-color': '#40818D',
+            'border-opacity': 0.5,
+        }).selector('.master-etcd-cluster')
+        .css({
+            'font-size': 15,
+            'text-outline-width': 0,
+            'background-color': '#2a4',
+            'background-opacity': 0.666,
+        }).selector('.master-etcd')
+        .css({
+            'width': 70,
+            'height': 70,
+            'font-size': 15,
+            'text-outline-width': 3,
+            'background-color': '#2a4',
+            'background-opacity': 0.666,
+        })
+        .selector('#master, .ext')
+        .css({
+            'background-color': '#93CDDD',
+            'text-outline-color': '#93CDDD',
+            'line-color': '#93CDDD',
+            'target-arrow-color': '#93CDDD'
+        })
+        .selector('#app, .app')
+        .css({
+            'background-color': '#F79646',
+            'text-outline-color': '#F79646',
+            'line-color': '#F79646',
+            'target-arrow-color': '#F79646',
+            'text-outline-color': '#F79646',
+            'text-outline-width': 2,
+            'color': '#fff'
+        })
+        .selector('#cy')
+        .css({
+            'background-opacity': 0,
+            'border-width': 1,
+            'border-color': '#aaa',
+            'border-opacity': 0.5,
+            'font-size': 50,
+            'padding-top': 40,
+            'padding-left': 40,
+            'padding-bottom': 40,
+            'padding-right': 40
+        }),
+    elements: {
+        nodes: getNodes()
+
+    },
+    layout: {
+        name: 'preset'
+    }
+});
+
+function getNodes() {
+    return {{ . }}
+}

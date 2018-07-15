@@ -1,0 +1,248 @@
+elements: {
+    nodes: [
+        {
+            data: {
+                id: 'cy',
+                name: 'Clusters'
+            }
+        },
+
+        {
+            data: {
+                id: 'production',
+                name: 'production-mobile-backend',
+                parent: 'cy'
+            },
+        },
+
+        {
+            data: {
+                id: 'master-1',
+                name: 'Master 1',
+                parent: 'production',
+            },
+            classes: 'master'
+        },
+
+        {
+            data: {
+                id: 'apiserver-master-1',
+                name: 'apiserver',
+                parent: 'master-1'
+            },
+            classes: 'master-process',
+            position: {
+                x: 0,
+                y: 0
+            }
+        },
+
+        {
+            data: {
+                id: 'scheduler-master-1',
+                name: 'scheduler',
+                parent: 'master-1'
+            },
+            classes: 'master-process',
+            position: {
+                x: 100,
+                y: 0
+            }
+        },
+
+        {
+            data: {
+                id: 'kube-controller-manager-master-1',
+                name: 'k-manager',
+                parent: 'master-1'
+            },
+            classes: 'master-process',
+            position: {
+                x: 200,
+                y: 0
+            }
+        },
+
+        {
+            data: {
+                id: 'cloud-controller-manager-master-1',
+                name: 'c-manager',
+                parent: 'master-1'
+            },
+            classes: 'master-process',
+            position: {
+                x: 300,
+                y: 0
+            }
+        },
+
+        {
+            data: {
+                id: 'etcd-cluster-master-1',
+                name: 'etcd-cluster',
+                parent: 'master-1'
+            },
+            classes: 'master-etcd-cluster'
+        },
+
+        {
+            data: {
+                id: 'etcd-1-master-1',
+                name: 'etcd-1',
+                parent: 'etcd-cluster-master-1'
+            },
+            classes: 'master-etcd',
+            position: {
+                x: 0,
+                y: 110
+            }
+        },
+
+        {
+            data: {
+                id: 'etcd-2-master-1',
+                name: 'etcd-2',
+                parent: 'etcd-cluster-master-1'
+            },
+            classes: 'master-etcd',
+            position: {
+                x: 80,
+                y: 110
+            }
+        },
+
+        {
+            data: {
+                id: 'etcd-3-master-1',
+                name: 'etcd-3',
+                parent: 'etcd-cluster-master-1'
+            },
+            classes: 'master-etcd',
+            position: {
+                x: 160,
+                y: 110
+            }
+        },
+
+///////////////////////////////////
+
+
+        {
+            data: {
+                id: 'master-2',
+                name: 'Master 2',
+                parent: 'production',
+            },
+            classes: 'master'
+        },
+
+        {
+            data: {
+                id: 'apiserver-master-2',
+                name: 'apiserver',
+                parent: 'master-2'
+            },
+            classes: 'master-process',
+            position: {
+                x: 0,
+                y: 280
+            }
+        },
+
+        {
+            data: {
+                id: 'scheduler-master-2',
+                name: 'scheduler',
+                parent: 'master-2'
+            },
+            classes: 'master-process',
+            position: {
+                x: 100,
+                y: 280
+            }
+        },
+
+        {
+            data: {
+                id: 'kube-controller-manager-master-2',
+                name: 'k-manager',
+                parent: 'master-2'
+            },
+            classes: 'master-process',
+            position: {
+                x: 200,
+                y: 280
+            }
+        },
+
+        {
+            data: {
+                id: 'cloud-controller-manager-master-2',
+                name: 'c-manager',
+                parent: 'master-2'
+            },
+            classes: 'master-process',
+            position: {
+                x: 300,
+                y: 280
+            }
+        },
+
+        {
+            data: {
+                id: 'etcd-cluster-master-2',
+                name: 'etcd-cluster',
+                parent: 'master-2'
+            },
+            classes: 'master-etcd-cluster'
+        },
+
+        {
+            data: {
+                id: 'etcd-1-master-2',
+                name: 'etcd-1',
+                parent: 'etcd-cluster-master-2'
+            },
+            classes: 'master-etcd',
+            position: {
+                x: 0,
+                y: 390
+            }
+        },
+
+        {
+            data: {
+                id: 'etcd-2-master-2',
+                name: 'etcd-2',
+                parent: 'etcd-cluster-master-2'
+            },
+            classes: 'master-etcd',
+            position: {
+                x: 80,
+                y: 390
+            }
+        },
+
+        {
+            data: {
+                id: 'etcd-3-master-2',
+                name: 'etcd-3',
+                parent: 'etcd-cluster-master-2'
+            },
+            classes: 'master-etcd',
+            position: {
+                x: 160,
+                y: 390
+            }
+        },
+
+
+    ]
+// ,
+// edges: [
+//     {data: {source: 'apiserver', target: 'etcd-3'}},
+//     // {data: {source: 'apiserver', target: 'worker-1'}},
+//     {data: {source: 'apiserver', target: 'etcd-2'}},
+//     {data: {source: 'apiserver', target: 'etcd-1'}}
+// ]
+}
